@@ -125,7 +125,7 @@ const Home = () => {
             Box 3
           </div>
           <div className="bg-white shadow-lg rounded-md p-6 w-full h-64">
-            Box 4
+          Box 4
           </div>
         </div>
       </div>
