@@ -107,7 +107,7 @@ const Home = () => {
     </div>
    
     <div className="m-3 text-xl text-gray-900 font-semibold w-full">
-    <div className="mt-8 absolute top-0 italic font-extrabold text-3xl">TRP SYSTEM</div>
+    <div className="mt-8 absolute top-0 italic font-extrabold text-4xl">TRP SYSTEM</div>
         <div className="mt-24 grid grid-cols-2 md:grid-cols-2 gap-4">
           <div className="bg-white shadow-lg rounded-md p-4">
             Box 1
