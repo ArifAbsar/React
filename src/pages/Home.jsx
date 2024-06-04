@@ -44,12 +44,6 @@ const Home = () => {
       setDropdown(null);
     }
   };
-  const layout = [
-    { i: "1", x: 0, y: 0, w: 6, h: 8 },
-    { i: "2", x: 6, y: 0, w: 6, h: 8 },
-    { i: "3", x: 0, y: 2, w: 6, h: 2 },
-    { i: "4", x: 6, y: 2, w: 6, h: 2 },
-  ];
   return (
     <section className="flex gap-6">
     <div
