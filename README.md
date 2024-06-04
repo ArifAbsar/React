@@ -1,4 +1,4 @@
-# react-tailwind-sidebar
+# React
 
 1)npm i
 
