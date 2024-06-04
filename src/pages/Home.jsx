@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import GridLayout from "react-grid-layout";
+import "react-grid-layout/css/styles.css";
+import "react-resizable/css/styles.css";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { RiGroupFill } from "react-icons/ri"
 import { MdAccessTime } from "react-icons/md";
 import { Link } from "react-router-dom";
+import {Rnd} from 'react-rnd';
 
 const Home = () => {
 
@@ -40,6 +44,12 @@ const Home = () => {
       setDropdown(null);
     }
   };
+  const layout = [
+    { i: "1", x: 0, y: 0, w: 6, h: 8 },
+    { i: "2", x: 6, y: 0, w: 6, h: 8 },
+    { i: "3", x: 0, y: 2, w: 6, h: 2 },
+    { i: "4", x: 6, y: 2, w: 6, h: 2 },
+  ];
   return (
     <section className="flex gap-6">
     <div
@@ -101,9 +111,24 @@ const Home = () => {
         ))}
       </div>
     </div>
-    <div className="m-3 text-xl text-gray-900 font-semibold">
-      REACT TAILWIND
-    </div>
+   
+    <div className="m-3 text-xl text-gray-900 font-semibold w-full">
+    <div className="mt-8 absolute top-0 italic font-extrabold text-3xl">TRP SYSTEM</div>
+        <div className="mt-24 grid grid-cols-2 md:grid-cols-2 gap-4">
+          <div className="bg-white shadow-lg rounded-md p-4">
+            Box 1
+          </div>
+          <div className="bg-white shadow-lg rounded-md p-6 w-full h-64">
+            Box 2
+          </div>
+          <div className="bg-white shadow-lg rounded-md p-6 w-full h-64">
+            Box 3
+          </div>
+          <div className="bg-white shadow-lg rounded-md p-6 w-full h-64">
+            Box 4
+          </div>
+        </div>
+      </div>
   </section>
 );
 };
