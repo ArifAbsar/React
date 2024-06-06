@@ -6,7 +6,6 @@ import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { RiGroupFill } from "react-icons/ri";
 import { MdAccessTime } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
 import Switch from './Switch'; // Import the custom switch component
 
 const Home = () => {
@@ -74,8 +73,8 @@ const Home = () => {
   return (
     <div className={`flex ${darkMode ? "dark" : ""}`}>
       <div
-        className={`bg-[#0e0e0e] min-h-screen w-72 duration-500 text-gray-100 px-4 fixed top-0 left-0 z-10 overflow-auto ${
-          !open ? "w-16" : ""
+        className={`bg-[#0e0e0e] min-h-screen duration-500 text-gray-100 px-4 fixed top-0 left-0 z-10 overflow-y-auto ${
+          open ? "w-72" : "w-16"
         }`}
       >
         <div className="py-3 flex justify-end">
@@ -87,9 +86,9 @@ const Home = () => {
         </div>
         <div className="mt-4 flex flex-col gap-4 relative">
           {menus?.map((menu, i) => (
-            <div key={i} className="sticky">
+            <div key={i} className="relative group">
               <div
-                className={`group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md cursor-pointer`}
+                className={`flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md cursor-pointer`}
                 onClick={() => handleMenuClick(i)}
               >
                 <div>{React.createElement(menu?.icon, { size: "20" })}</div>
@@ -99,18 +98,20 @@ const Home = () => {
                   }}
                   className={`whitespace-pre duration-700 ${
                     !open && "opacity-0 translate-x-28 overflow-hidden"
-                  }`}
+                  }${open && "hidden"}`}
                 >
                   {menu?.name}
                 </h2>
                 <h2
-                  className={`${
-                    open && "hidden"
-                  } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`}
-                >
-                  {menu?.name}
-                </h2>
+                className={`${
+                  open && "hidden"
+                }  fixed left-10 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit `}
+                style={{ whiteSpace: 'nowrap' }}
+              >
+                {menu?.name}
+              </h2>
               </div>
+              
               {menu.subMenus && (
                 <div
                   className={`${
@@ -145,7 +146,9 @@ const Home = () => {
       </div>
 
       <div
-        className={`flex-1 duration-500 ease-in-out ml-${open ? "72" : "16"}`}
+        className={`flex-1 duration-500 ease-in-out ${
+          open ? "ml-72" : "ml-16"
+        }`}
       >
         <div className="p-4">
           <div className="flex-auto mt-0 w-full p-4 bg-white shadow-lg rounded-md dark:bg-gray-800">
@@ -153,17 +156,17 @@ const Home = () => {
               TRP SYSTEM
             </h1>
           </div>
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 top-0 overflow-hidden">
-            <div className="bg-white shadow-lg rounded-md p-6 overflow-hidden dark:bg-gray-800 dark:text-gray-100">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100">
               Box 1
             </div>
-            <div className="bg-white shadow-lg rounded-md p-6 overflow-hidden w-full h-52 dark:bg-gray-800 dark:text-gray-100">
+            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100">
               Box 2
             </div>
-            <div className="bg-white shadow-lg rounded-md p-6 overflow-hidden w-full h-52 dark:bg-gray-800 dark:text-gray-100">
+            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100">
               Box 3
             </div>
-            <div className="bg-white shadow-lg rounded-md p-6 overflow-hidden w-full h-52 dark:bg-gray-800 dark:text-gray-100">
+            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100">
               Box 4
             </div>
           </div>
@@ -174,3 +177,4 @@ const Home = () => {
 };
 
 export default Home;
+
