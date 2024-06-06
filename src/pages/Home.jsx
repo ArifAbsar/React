@@ -160,13 +160,13 @@ const Home = () => {
             <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100">
               Box 1
             </div>
-            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100">
+            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 w-full h-52">
               Box 2
             </div>
-            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100">
+            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 w-full h-52">
               Box 3
             </div>
-            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100">
+            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 w-full h-52">
               Box 4
             </div>
           </div>
