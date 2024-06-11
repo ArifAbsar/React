@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
-import { HiMenuAlt3 } from "react-icons/hi";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { RiGroupFill } from "react-icons/ri";
 import { MdAccessTime } from "react-icons/md";
@@ -38,9 +37,9 @@ const Home = () => {
     },
   ];
 
-  const [open, setOpen] = useState(true);
   const [dropdown, setDropdown] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const [notification, setNotification] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -51,7 +50,6 @@ const Home = () => {
   }, [darkMode]);
 
   const handleMenuClick = (index) => {
-    setOpen(true);
     if (dropdown === index) {
       setDropdown(null);
     } else {
@@ -59,31 +57,22 @@ const Home = () => {
     }
   };
 
-  const handleSidebarToggle = () => {
-    setOpen(!open);
-    if (open) {
-      setDropdown(null);
-    }
-  };
-
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
+  const handleClick = () => {
+    setNotification(true);
+    setTimeout(() => {
+      setNotification(false);
+    }, 3000);
+  };
+
   return (
-    <div className={`flex ${darkMode ? "dark" : ""}`}>
+    <div className={`flex ${darkMode ? "dark" : ""} min-h-screen`}>
       <div
-        className={`bg-[#0e0e0e] min-h-screen duration-500 text-gray-100 px-4 fixed top-0 left-0 z-10 overflow-y-auto ${
-          open ? "w-72" : "w-16"
-        }`}
+        className={`bg-[#0e0e0e] text-gray-100 px-4 fixed top-0 left-0 z-10 w-1/6 overflow-y-auto min-h-screen`}
       >
-        <div className="py-3 flex justify-end">
-          <HiMenuAlt3
-            size={26}
-            className="cursor-pointer"
-            onClick={handleSidebarToggle}
-          />
-        </div>
         <div className="mt-4 flex flex-col gap-4 relative">
           {menus?.map((menu, i) => (
             <div key={i} className="relative group">
@@ -103,15 +92,14 @@ const Home = () => {
                   {menu?.name}
                 </h2>
                 <h2
-                className={`${
-                  open && "hidden"
-                }  fixed left-10 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit `}
-                style={{ whiteSpace: 'nowrap' }}
-              >
-                {menu?.name}
-              </h2>
+                  className={`${
+                    open && "hidden"
+                  } fixed left-10 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit `}
+                  style={{ whiteSpace: 'nowrap' }}
+                >
+                  {menu?.name}
+                </h2>
               </div>
-              
               {menu.subMenus && (
                 <div
                   className={`${
@@ -145,36 +133,51 @@ const Home = () => {
         </div>
       </div>
 
-      <div
-        className={`flex-1 duration-500 ease-in-out ${
-          open ? "ml-72" : "ml-16"
-        }`}
-      >
-        <div className="p-4">
-          <div className="flex-auto mt-0 w-full p-4 bg-white shadow-lg rounded-md dark:bg-gray-800">
-            <h1 className="italic font-extrabold text-2xl md:text-4xl text-gray-900 dark:text-gray-100">
-              TRP SYSTEM
-            </h1>
+      <div className="flex-1 mx-auto p-4" style={{ maxWidth: "66.67%" }}>
+        <div className="w-full p-4 bg-white shadow-lg rounded-md dark:bg-gray-800 text-center">
+          <h1 className="italic font-extrabold text-2xl md:text-4xl text-gray-900 dark:text-gray-100">
+            TRP SYSTEM
+          </h1>
+        </div>
+        <div className="flex w-full mt-4 space-x-4">
+          <div className="flex-1 bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 h-96">
+            Left Section
           </div>
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100">
-              Box 1
+          <div className="flex-1 flex flex-col space-y-4">
+            <div className="h-18 bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 flex items-center justify-center">
+              <h2 className="text-lg font-normal">Middle Top Section</h2>
             </div>
-            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 w-full h-52">
-              Box 2
+            <div className="flex-1 bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100">
+              Middle Bottom Section
             </div>
-            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 w-full h-52">
-              Box 3
-            </div>
-            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 w-full h-52">
-              Box 4
-            </div>
+          </div>
+          <div className="flex-1 bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 h-96">
+            Right Section
           </div>
         </div>
+        <div className="flex justify-center mt-8">
+          <button
+            id="okButton"
+            onClick={handleClick}
+            className="px-6 py-3 bg-black text-white rounded-md text-lg transition duration-500 ease-in-out transform hover:scale-105"
+          >
+            Ok
+          </button>
+        </div>
+        {notification && (
+          <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg transition-opacity duration-500">
+            Button pressed!
+          </div>
+        )}
+      </div>
+
+      <div
+        className={`bg-[#0e0e0e] min-h-screen text-gray-100 px-4 fixed top-0 right-0 z-10 w-1/6 overflow-y-auto`}
+      >
+        {/* Right sidebar content here */}
       </div>
     </div>
   );
 };
 
 export default Home;
-
