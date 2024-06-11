@@ -72,7 +72,7 @@ const Home = () => {
     <div className={`flex ${darkMode ? "dark" : ""} min-h-screen`}>
       <div
         className={`bg-[#0e0e0e] text-gray-100 px-4 fixed top-0 left-0 z-10`}
-        style={{ width: "200px", height: "100vh" }}
+        style={{ width: "192px", height: "100vh" }}
       >
         <div className="mt-4 flex flex-col gap-4 relative">
           {menus?.map((menu, i) => (
@@ -81,7 +81,7 @@ const Home = () => {
                 className={`flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md cursor-pointer`}
                 onClick={() => handleMenuClick(i)}
               >
-                <div>{React.createElement(menu?.icon, { size: "20" })}</div>
+                <div>{React.createElement(menu?.icon, { size: "20px" })}</div>
                 <h2
                   style={{
                     transitionDelay: `${i + 3}00ms`,
@@ -134,50 +134,51 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mx-auto p-4" style={{ width: "calc(100% - 400px)" }}>
+      <div className="flex-1 p-4" style={{ marginLeft: "192px", marginRight: "192px" }}>
         <div className="w-full p-4 bg-white shadow-lg rounded-md dark:bg-gray-800 text-center">
           <h1 className="italic font-extrabold text-2xl md:text-4xl text-gray-900 dark:text-gray-100">
             TRP SYSTEM
           </h1>
         </div>
-        <div className="flex w-full mt-4 space-x-4">
-          <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100" style={{ width: "300px", height: "400px" }}>
-            Left Section
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4" style={{ height: "calc(85vh - 120px)" }}>
+          <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 flex flex-col">
+            <div className="flex-1">Left Section</div>
           </div>
-          <div className="flex flex-col space-y-4" style={{ width: "400px" }}>
-            <div className="bg-white shadow-lg rounded-md p-4 dark:bg-gray-800 dark:text-gray-100" style={{ height: "50px" }}>
-              <h2 className="text-lg font-normal ">Middle Top Section</h2>
+          <div className="flex flex-col space-y-4">
+            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 flex items-center justify-center">
+              <h2 className="text-lg font-normal">Middle Top Section</h2>
             </div>
-            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100" style={{ height: "335px" }}>
+            <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 flex-1">
               Middle Bottom Section
             </div>
           </div>
-          <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100" style={{ width: "300px", height: "400px" }}>
-            Right Section
+          <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 flex flex-col">
+            <div className="flex-1">Right Section</div>
           </div>
         </div>
         <div className="flex justify-center mt-8">
           <button
             id="okButton"
             onClick={handleClick}
-            className="px-6 py-2 bg-black text-white rounded-md text-lg transition duration-500 ease-in-out transform hover:scale-105"
+            className="px-6 py-3 bg-black text-white rounded-md text-lg transition duration-500 ease-in-out transform hover:scale-105"
           >
             Ok
           </button>
         </div>
-        {notification && (
-          <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg transition-opacity duration-500">
-            Button pressed!
-          </div>
-        )}
       </div>
 
       <div
         className={`bg-[#0e0e0e] text-gray-100 px-4 fixed top-0 right-0 z-10`}
-        style={{ width: "200px", height: "100vh" }}
+        style={{ width: "192px", height: "100vh" }}
       >
         {/* Right sidebar content here */}
       </div>
+
+      {notification && (
+        <div className="fixed top-4 right-56 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg transition-opacity duration-500">
+          Button pressed!
+        </div>
+      )}
     </div>
   );
 };
