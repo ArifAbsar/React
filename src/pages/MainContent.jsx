@@ -1,5 +1,7 @@
 import React from 'react';
-import CheckboxList from './checkbox';
+import CheckboxList from './checkbox_Time';
+import CheckboxOption from './checkbox_analysis_option';
+import Header from './channelheader';
 const MainContent = ({ handleClick }) => {
   return (
     <div className="flex-1 p-4" style={{ marginLeft: "192px", marginRight: "192px" }}>
@@ -10,7 +12,7 @@ const MainContent = ({ handleClick }) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4" style={{ height: "calc(85vh - 120px)" }}>
         <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 flex flex-col">
-          <div className="flex-1">Left Section</div>
+
         <CheckboxList/>
        </div>
         <div className="flex flex-col space-y-4">
@@ -18,11 +20,19 @@ const MainContent = ({ handleClick }) => {
             <h2 className="text-lg font-normal">Middle Top Section</h2>
           </div>
           <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 flex-1">
-            Middle Bottom Section
+            <CheckboxOption/>
           </div>
         </div>
         <div className="bg-white shadow-lg rounded-md p-6 dark:bg-gray-800 dark:text-gray-100 flex flex-col">
-          <div className="flex-1">Right Section</div>
+          <Header/>
+          <div class="flex flex-1  p-0">
+            <div class="w-full max-w-lg">
+            <form class="mt-5 sm:flex sm:items-center">
+            <input type='text' name='Sr_channel' className='"inline w-full rounded-md border border-gray-300 bg-white py-2 pl-3 pr-3 leading-5 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"' placeholder='Search Channels'/>
+            <button type="submit" class="mt-3 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Search</button>
+        </form>
+    </div>
+</div>
         </div>
       </div>
       <div className="flex justify-center mt-8">
