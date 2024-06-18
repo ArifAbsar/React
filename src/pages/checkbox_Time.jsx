@@ -33,7 +33,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               Date
             </Typography>
           </label>
@@ -53,7 +53,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               Days
             </Typography>
           </label>
@@ -73,7 +73,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               Weeks
             </Typography>
           </label>
@@ -93,7 +93,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               Months
             </Typography>
           </label>
@@ -113,7 +113,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               Quarter
             </Typography>
           </label>
@@ -121,7 +121,7 @@ const CheckboxList = () => {
       </List>
 
       {/* Time Series - By Cities */}
-      <div className="my-0">
+      <div className="my-4">
         <Typography variant="h5" className="font-bold text-2xl text-gray-800 dark:text-gray-100 mb-2">
           Time Series - By Cities
         </Typography>
@@ -143,7 +143,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               By Cities
             </Typography>
           </label>
@@ -151,7 +151,7 @@ const CheckboxList = () => {
       </List>
 
       {/* Time Series - Others */}
-      <div className="my-0">
+      <div className="my-4">
         <Typography variant="h5" className="font-bold text-2xl text-gray-800 dark:text-gray-100 ">
           Time Series - Others
         </Typography>
@@ -173,7 +173,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               Cumulative Reach by Day parts
             </Typography>
           </label>
@@ -193,8 +193,8 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
-              Reach Accross Dayparts Weeks
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+              Reach Across Dayparts Weeks
             </Typography>
           </label>
         </ListItem>
@@ -213,7 +213,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               Channels Shared By Dayparts
             </Typography>
           </label>
@@ -233,7 +233,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               Channels Shared By Dayparts Week
             </Typography>
           </label>

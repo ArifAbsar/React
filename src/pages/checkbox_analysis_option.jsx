@@ -34,7 +34,7 @@ const CheckboxOption = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               TVR(000)
             </Typography>
           </label>
@@ -54,7 +54,7 @@ const CheckboxOption = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               TVR-By Percentage
             </Typography>
           </label>
@@ -74,7 +74,7 @@ const CheckboxOption = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               Share
             </Typography>
           </label>
@@ -94,7 +94,7 @@ const CheckboxOption = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
               Time Spent(Universe)
             </Typography>
           </label>
