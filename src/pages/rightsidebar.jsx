@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Menu from './Menu';
 
-const Sidebar = ({ menus, dropdown, handleMenuClick, darkMode, toggleDarkMode }) => {
+const RightSidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleSidebar = () => {
@@ -11,7 +10,7 @@ const Sidebar = ({ menus, dropdown, handleMenuClick, darkMode, toggleDarkMode })
   return (
     <>
       {/* Hamburger Menu */}
-      <div className="lg:hidden flex items-center p-4">
+      <div className="lg:hidden flex items-center p-4 justify-end">
         <button
           onClick={handleToggleSidebar}
           className="text-gray-100 focus:outline-none"
@@ -22,25 +21,15 @@ const Sidebar = ({ menus, dropdown, handleMenuClick, darkMode, toggleDarkMode })
         </button>
       </div>
 
-      {/* Sidebar */}
+      {/* Right Sidebar */}
       <div
-        className={`fixed top-0 left-0 z-10 bg-[#0e0e0e] text-gray-100 px-4 transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-0 right-0 z-10 bg-[#0e0e0e] text-gray-100 px-4 transform ${
+          isOpen ? "translate-x-0" : "translate-x-full"
         } lg:translate-x-0 transition-transform duration-300 ease-in-out`}
         style={{ width: "192px", height: "100vh" }}
       >
         <div className="mt-4 flex flex-col gap-4 relative">
-          {menus.map((menu, i) => (
-            <Menu
-              key={i}
-              menu={menu}
-              index={i}
-              dropdown={dropdown}
-              handleMenuClick={handleMenuClick}
-              darkMode={darkMode}
-              toggleDarkMode={toggleDarkMode}
-            />
-          ))}
+          {children}
         </div>
       </div>
 
@@ -55,4 +44,4 @@ const Sidebar = ({ menus, dropdown, handleMenuClick, darkMode, toggleDarkMode })
   );
 };
 
-export default Sidebar;
+export default RightSidebar;

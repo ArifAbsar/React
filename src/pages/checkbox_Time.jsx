@@ -9,15 +9,15 @@ import {
 
 const CheckboxList = () => {
   return (
-    <div className="p-4">
+    <div className="p-1 flex-1 overflow-auto">
       {/* Time Series - By Time */}
-      <div className="mb-0">
-        <Typography variant="h5" className="font-bold text-2xl text-gray-800 dark:text-gray-100 mb-2">
+      <div className="mb-4">
+        <Typography variant="h5" className="font-bold text-xl md:text-2xl text-gray-800 dark:text-gray-100 mb-2">
           Time Series - By Time
         </Typography>
         <div className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md w-32 mb-4"></div>
       </div>
-      <List>
+      <List className="flex flex-col space-y-2">
         <ListItem className="p-0">
           <label
             htmlFor="vertical-list-Date"
@@ -33,7 +33,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               Date
             </Typography>
           </label>
@@ -53,7 +53,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               Days
             </Typography>
           </label>
@@ -73,7 +73,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               Weeks
             </Typography>
           </label>
@@ -93,7 +93,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               Months
             </Typography>
           </label>
@@ -113,7 +113,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               Quarter
             </Typography>
           </label>
@@ -122,12 +122,12 @@ const CheckboxList = () => {
 
       {/* Time Series - By Cities */}
       <div className="my-4">
-        <Typography variant="h5" className="font-bold text-2xl text-gray-800 dark:text-gray-100 mb-2">
+        <Typography variant="h5" className="font-bold text-xl md:text-2xl text-gray-800 dark:text-gray-100 mb-2">
           Time Series - By Cities
         </Typography>
         <div className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md w-32 mb-4"></div>
       </div>
-      <List>
+      <List className="flex flex-col space-y-2">
         <ListItem className="p-0">
           <label
             htmlFor="vertical-list-ByCities"
@@ -143,7 +143,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               By Cities
             </Typography>
           </label>
@@ -152,12 +152,12 @@ const CheckboxList = () => {
 
       {/* Time Series - Others */}
       <div className="my-4">
-        <Typography variant="h5" className="font-bold text-2xl text-gray-800 dark:text-gray-100 ">
+        <Typography variant="h5" className="font-bold text-xl md:text-2xl text-gray-800 dark:text-gray-100">
           Time Series - Others
         </Typography>
         <div className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md w-32 mb-4"></div>
       </div>
-      <List>
+      <List className="flex flex-col space-y-2">
         <ListItem className="p-0">
           <label
             htmlFor="vertical-list-Reach_by_Dayparts"
@@ -173,7 +173,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               Cumulative Reach by Day parts
             </Typography>
           </label>
@@ -193,7 +193,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               Reach Across Dayparts Weeks
             </Typography>
           </label>
@@ -213,7 +213,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               Channels Shared By Dayparts
             </Typography>
           </label>
@@ -233,7 +233,7 @@ const CheckboxList = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               Channels Shared By Dayparts Week
             </Typography>
           </label>

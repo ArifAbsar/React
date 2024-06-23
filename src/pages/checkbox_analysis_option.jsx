@@ -9,16 +9,15 @@ import {
 
 const CheckboxOption = () => {
   return (
-    <div className="p-4">
-
+    <div className="p-1 flex-1 overflow-auto">
       {/* Time Series - Others */}
       <div className="my-0">
-        <Typography variant="h5" className="font-bold text-2xl text-gray-800 dark:text-gray-100 ">
+        <Typography variant="h5" className="font-bold text-xl md:text-2xl text-gray-800 dark:text-gray-100">
           Analysis Options
         </Typography>
         <div className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md w-32 mb-4"></div>
       </div>
-      <List>
+      <List className="flex flex-col space-y-2">
         <ListItem className="p-0">
           <label
             htmlFor="vertical-list-tvr"
@@ -34,7 +33,7 @@ const CheckboxOption = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               TVR(000)
             </Typography>
           </label>
@@ -54,7 +53,7 @@ const CheckboxOption = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               TVR-By Percentage
             </Typography>
           </label>
@@ -74,7 +73,7 @@ const CheckboxOption = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               Share
             </Typography>
           </label>
@@ -94,7 +93,7 @@ const CheckboxOption = () => {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium text-sm sm:text-base">
+            <Typography color="blue-gray" className="font-medium text-xs sm:text-sm md:text-base">
               Time Spent(Universe)
             </Typography>
           </label>

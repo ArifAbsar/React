@@ -8,6 +8,7 @@ import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { RiGroupFill } from "react-icons/ri";
 import { MdAccessTime } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
+import RightSidebar from "./pages/rightsidebar";
 
 
 const Home = () => {
@@ -81,9 +82,9 @@ const Home = () => {
         toggleDarkMode={toggleDarkMode}
       />
       <MainContent handleClick={handleClick} />
-      <div className={`bg-[#0e0e0e] text-gray-100 px-4 fixed top-0 right-0 z-10`} style={{ width: "192px", height: "100vh" }}>
-        {/* Right sidebar content here */}
-      </div>
+      <RightSidebar>
+            {/* Right sidebar content here */}
+      </RightSidebar>
       <Notification notification={notification} />
     </div>
   );
