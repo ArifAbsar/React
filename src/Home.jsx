@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
-import Sidebar from "./pages/Sidebar";
-import MainContent from "./pages/MainContent";
-import Notification from "./pages/notification";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { RiGroupFill } from "react-icons/ri";
 import { MdAccessTime } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
-import RightSidebar from "./pages/rightsidebar";
-
+import Sidebar from "./pages/Sidebar"; // Adjust the import path if needed
+import MainContent from "./pages/MainContent"; // Adjust the import path if needed
+import Notification from "./pages/notification"; // Adjust the import path if needed
+import Switch from './pages/Switch'; // Import the custom switch component
 
 const Home = () => {
   const menus = [
@@ -27,10 +26,6 @@ const Home = () => {
       name: "Target Group",
       link: "/",
       icon: RiGroupFill,
-      subMenus: [
-        { name: "Pre-Defined", link: "/pre_defined" },
-        { name: "User-Defined", link: "/user_defined" },
-      ],
     },
     { name: "Target Time", link: "/", icon: MdAccessTime },
     {
@@ -44,6 +39,7 @@ const Home = () => {
   const [dropdown, setDropdown] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
   const [notification, setNotification] = useState(false);
+  const [selectedSubmenu, setSelectedSubmenu] = useState("Time"); // Default to "Time"
 
   useEffect(() => {
     if (darkMode) {
@@ -59,6 +55,10 @@ const Home = () => {
     } else {
       setDropdown(index);
     }
+  };
+
+  const handleSubmenuClick = (submenu) => {
+    setSelectedSubmenu(submenu);
   };
 
   const toggleDarkMode = () => {
@@ -80,11 +80,18 @@ const Home = () => {
         handleMenuClick={handleMenuClick}
         darkMode={darkMode}
         toggleDarkMode={toggleDarkMode}
+        handleSubmenuClick={handleSubmenuClick} // Pass the submenu click handler
       />
-      <MainContent handleClick={handleClick} />
-      <RightSidebar>
-            {/* Right sidebar content here */}
-      </RightSidebar>
+      <MainContent
+        handleClick={handleClick}
+        selectedSubmenu={selectedSubmenu} // Pass the selected submenu
+      />
+      <div
+        className={`bg-[#0e0e0e] text-gray-100 px-4 fixed top-0 right-0 z-10`}
+        style={{ width: "192px", height: "100vh" }}
+      >
+        {/* Right sidebar content here */}
+      </div>
       <Notification notification={notification} />
     </div>
   );

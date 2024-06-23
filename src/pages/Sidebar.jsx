@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Menu from './Menu';
 
-const Sidebar = ({ menus, dropdown, handleMenuClick, darkMode, toggleDarkMode }) => {
+const Sidebar = ({ menus, dropdown, handleMenuClick, darkMode, toggleDarkMode, handleSubmenuClick }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleSidebar = () => {
@@ -39,6 +39,7 @@ const Sidebar = ({ menus, dropdown, handleMenuClick, darkMode, toggleDarkMode })
               handleMenuClick={handleMenuClick}
               darkMode={darkMode}
               toggleDarkMode={toggleDarkMode}
+              handleSubmenuClick={handleSubmenuClick} // Pass the submenu click handler
             />
           ))}
         </div>

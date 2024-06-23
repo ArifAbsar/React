@@ -1,7 +1,7 @@
 import React from 'react';
 import Switch from './Switch';
 
-const Menu = ({ menu, index, dropdown, handleMenuClick, darkMode, toggleDarkMode }) => {
+const Menu = ({ menu, index, dropdown, handleMenuClick, darkMode, toggleDarkMode, handleSubmenuClick }) => {
   return (
     <div className="relative group">
       <div
@@ -27,7 +27,7 @@ const Menu = ({ menu, index, dropdown, handleMenuClick, darkMode, toggleDarkMode
             <div
               key={j}
               className="block text-sm font-medium p-2 hover:bg-gray-700 rounded-md cursor-pointer"
-              onClick={subMenu.action === "toggleDarkMode" ? toggleDarkMode : null}
+              onClick={subMenu.action === "toggleDarkMode" ? toggleDarkMode : () => handleSubmenuClick(subMenu.name)}
             >
               {subMenu.name === "Toggle Dark Mode" ? (
                 <Switch isOn={darkMode} handleToggle={toggleDarkMode} />
