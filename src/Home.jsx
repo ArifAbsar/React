@@ -5,10 +5,10 @@ import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { RiGroupFill } from "react-icons/ri";
 import { MdAccessTime } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
-import Sidebar from "./pages/Sidebar"; // Adjust the import path if needed
-import MainContent from "./pages/MainContent"; // Adjust the import path if needed
-import Notification from "./pages/notification"; // Adjust the import path if needed
-import Switch from './pages/Switch'; // Import the custom switch component
+import Sidebar from "./pages/Sidebar"; 
+import MainContent from "./pages/MainContent"; 
+import Notification from "./pages/notification"; 
+import Switch from './pages/Switch'; 
 
 const Home = () => {
   const menus = [
