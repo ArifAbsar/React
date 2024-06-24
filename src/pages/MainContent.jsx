@@ -2,8 +2,8 @@ import React from 'react';
 import CheckboxList from './checkbox_Time';
 import CheckboxOption from './checkbox_analysis_option';
 import Header from './channelheader';
-import ProgrammeTRP from './ProgrammeTRP'; // Import the Programme TRP component
-import StrategicForecasting from './StrategicForecasting'; // Import the Strategic Forecasting component
+import ProgrammeTRP from './ProgrammeTRP'; 
+import StrategicForecasting from './StrategicForecasting'; 
 
 const MainContent = ({ handleClick, selectedSubmenu }) => {
   return (

@@ -5,10 +5,10 @@ import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { RiGroupFill } from "react-icons/ri";
 import { MdAccessTime } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
-import Sidebar from "./pages/Sidebar"; 
-import MainContent from "./pages/MainContent"; 
-import Notification from "./pages/notification"; 
-import Switch from './pages/Switch'; 
+import Sidebar from "./pages/Sidebar";
+import MainContent from "./pages/MainContent";
+import Notification from "./pages/notification";
+import Switch from './pages/Switch';
 
 const Home = () => {
   const menus = [
@@ -36,7 +36,7 @@ const Home = () => {
     },
   ];
 
-  const [dropdown, setDropdown] = useState(null);
+  const [dropdown, setDropdown] = useState(0); // Set initial dropdown to the index of the menu containing "Time"
   const [darkMode, setDarkMode] = useState(false);
   const [notification, setNotification] = useState(false);
   const [selectedSubmenu, setSelectedSubmenu] = useState("Time"); // Default to "Time"
@@ -80,7 +80,8 @@ const Home = () => {
         handleMenuClick={handleMenuClick}
         darkMode={darkMode}
         toggleDarkMode={toggleDarkMode}
-        handleSubmenuClick={handleSubmenuClick} // Pass the submenu click handler
+        handleSubmenuClick={handleSubmenuClick}
+        selectedSubmenu={selectedSubmenu} // Pass the selected submenu
       />
       <MainContent
         handleClick={handleClick}
