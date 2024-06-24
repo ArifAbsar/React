@@ -8,7 +8,6 @@ import { IoSettingsOutline } from "react-icons/io5";
 import Sidebar from "./pages/Sidebar";
 import MainContent from "./pages/MainContent";
 import Notification from "./pages/notification";
-import Switch from './pages/Switch';
 
 const Home = () => {
   const menus = [
@@ -24,7 +23,7 @@ const Home = () => {
     },
     {
       name: "Target Group",
-      link: "/",
+      link: "/target_group",
       icon: RiGroupFill,
     },
     { name: "Target Time", link: "/", icon: MdAccessTime },
@@ -39,6 +38,7 @@ const Home = () => {
   const [dropdown, setDropdown] = useState(0); // Set initial dropdown to the index of the menu containing "Time"
   const [darkMode, setDarkMode] = useState(false);
   const [notification, setNotification] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState("Analyze");
   const [selectedSubmenu, setSelectedSubmenu] = useState("Time"); // Default to "Time"
 
   useEffect(() => {
@@ -49,10 +49,13 @@ const Home = () => {
     }
   }, [darkMode]);
 
-  const handleMenuClick = (index) => {
-    if (dropdown === index) {
+  const handleMenuClick = (menuName, index) => {
+    if (selectedMenu === menuName && menuName !== "Analyze") {
+      // Only toggle dropdown for "Analyze"
+      setSelectedMenu(menuName);
       setDropdown(null);
     } else {
+      setSelectedMenu(menuName);
       setDropdown(index);
     }
   };
@@ -81,11 +84,13 @@ const Home = () => {
         darkMode={darkMode}
         toggleDarkMode={toggleDarkMode}
         handleSubmenuClick={handleSubmenuClick}
-        selectedSubmenu={selectedSubmenu} // Pass the selected submenu
+        selectedMenu={selectedMenu} 
+        selectedSubmenu={selectedSubmenu} 
       />
       <MainContent
         handleClick={handleClick}
-        selectedSubmenu={selectedSubmenu} // Pass the selected submenu
+        selectedMenu={selectedMenu} 
+        selectedSubmenu={selectedSubmenu} 
       />
       <div
         className={`bg-[#0e0e0e] text-gray-100 px-4 fixed top-0 right-0 z-10`}

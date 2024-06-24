@@ -1,12 +1,16 @@
 import React from 'react';
 import Switch from './Switch';
 
-const Menu = ({ menu, index, dropdown, handleMenuClick, darkMode, toggleDarkMode, handleSubmenuClick, selectedSubmenu }) => {
+const Menu = ({ menu, index, dropdown, handleMenuClick, darkMode, toggleDarkMode, handleSubmenuClick, selectedMenu, selectedSubmenu }) => {
+  const isDropdownOpen = dropdown === index;
+
   return (
     <div className="relative group">
       <div
-        className={`flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md cursor-pointer`}
-        onClick={() => handleMenuClick(index)}
+        className={`flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md cursor-pointer ${
+          selectedMenu === menu.name ? "bg-gray-700" : ""
+        }`}
+        onClick={() => handleMenuClick(menu.name, index)}
       >
         <div>{React.createElement(menu.icon, { size: "20px" })}</div>
         <h2 className={`whitespace-pre duration-700 ${!open && "opacity-0 translate-x-28 overflow-hidden"}${open && "hidden"}`}>
@@ -22,7 +26,7 @@ const Menu = ({ menu, index, dropdown, handleMenuClick, darkMode, toggleDarkMode
         </h2>
       </div>
       {menu.subMenus && (
-        <div className={`${dropdown === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"} overflow-hidden transition-all duration-700 ease-in-out pl-6 mt-2`}>
+        <div className={`${isDropdownOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"} overflow-hidden transition-all duration-700 ease-in-out pl-6 mt-2`}>
           {menu.subMenus.map((subMenu, j) => (
             <div
               key={j}
