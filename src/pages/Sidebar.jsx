@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Menu from './Menu';
 
-const Sidebar = ({ menus, dropdown, handleMenuClick, darkMode, toggleDarkMode, handleSubmenuClick, selectedMenu, selectedSubmenu }) => {
+const Sidebar = ({ menus, dropdown, handleMenuClick, darkMode, toggleDarkMode, handleSubmenuClick, selectedMenu, selectedSubmenu, language, changeLanguage }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleSidebar = () => {
@@ -45,6 +45,11 @@ const Sidebar = ({ menus, dropdown, handleMenuClick, darkMode, toggleDarkMode, h
             />
           ))}
         </div>
+        {selectedSubmenu === "Select Language" && (
+          <div className="p-2 mt-4">
+            <div id="google_translate_element"></div>
+          </div>
+        )}
       </div>
 
       {/* Overlay for small screens */}
